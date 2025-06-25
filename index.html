@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WorldLifeMC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="navbar">
+      <!-- ロゴ（PC用とモバイル用で切り替え） -->
+      <div class="logo">
+        <a href="index.html" class="logo-full">WorldLifeMC</a>
+        <a href="index.html" class="logo-mobile">WLMC</a>
+      </div>
+
+      <!-- ハンバーガーボタン（モバイル） -->
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <!-- メニュー -->
+      <nav class="nav-links">
+        <a href="guide.html">ガイド</a>
+        <a href="status.html">ステータス</a>
+        <a href="earthmap.html">Earthmap</a>
+        <button class="join-btn">今すぐ参加</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>WorldLifeMC</h1>
+      <p>広大な地球マップで繰り広げられる、自由と戦乱の物語</p>
+
+      <div class="server-info">
+        <div class="server-row">
+          <span>Java版：</span>
+          <input type="text" id="java-ip" value="play.worldlifemc.net" readonly />
+          <button onclick="copyToClipboard('java-ip')">📋 コピー</button>
+        </div>
+        <div class="server-row">
+          <span>統合版：</span>
+          <input type="text" id="be-ip" value="worldlifemc.net" readonly />
+        </div>
+        <div class="server-row">
+          <span>ポート：</span>
+          <input type="text" id="port-ip" value="19132" readonly />
+        </div>
+
+        <button class="start-btn">今すぐ冒険に出発！</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>DOCS</h4>
+        <ul>
+          <li><a href="guide.html">Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="https://discord.gg/worldlifemc" target="_blank">Discord <span>↗</span></a></li>
+          <li><a href="https://wiki.worldlifemc.net" target="_blank">Wiki <span>↗</span></a></li>
+          <li><a href="https://youtube.com/@worldlifemc" target="_blank">YouTube <span>↗</span></a></li>
+          <li><a href="https://twitter.com/worldlifemc" target="_blank">X <span>↗</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>MORE</h4>
+        <ul>
+          <li><a href="https://github.com/worldlifemc" target="_blank">GitHub <span>↗</span></a></li>
+          <li><a href="status.html">Status <span>↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Created by © 2025 WorldLifeMC.</p>
+    </div>
+  </footer>
+
+  <!-- スクリプト -->
+  <script>
+    function copyToClipboard(id) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("コピーしました: " + input.value);
+    }
+
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
